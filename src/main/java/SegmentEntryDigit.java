@@ -22,11 +22,9 @@ public class SegmentEntryDigit {
 
     public ArrayList<Integer> getCodeFromLine(StringBuilder sb){
         ArrayList<Integer> arrInt = new ArrayList<Integer>();
-        DigitMap dm = new DigitMap();
 
         for (int i = 0; i < NB_OF_DIGIT_PER_LINE; i++) {
-            System.out.println(this.getEntryDigit(sb,i));
-            arrInt.add( dm.digitToInteger(this.getEntryDigit(sb,i)) );
+            arrInt.add(DigitMap.digitToInteger(this.getEntryDigit(sb,i)) );
         }
 
         return arrInt;
