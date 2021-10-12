@@ -1,32 +1,44 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class SegmentEntryDigit {
     final int SIZE_OF_ONE_DIGIT = 3;
     final int LINE_LENGTH = 28;
     final int NB_OF_DIGIT_PER_LINE = 9;
+    final float NB_OF_CHAR_PER_ENTRY = 85;
 
-    public ArrayList<String> getEntryDigit(StringBuilder builder, int index){
+    public ArrayList<String> getEntryDigit(StringBuilder builder, int index, int startNewLine) {
         ArrayList<String> arrEntryDigit = new ArrayList<String>();
-        int localInt = 0;
 
         for (int i = 0; i < 3; i++) { //ligne suivante
             for (int j = 0; j < 3; j++) { //charAt suivant
-                arrEntryDigit.add(String.valueOf(builder.charAt(index*SIZE_OF_ONE_DIGIT + localInt + j)));
+                arrEntryDigit.add(String.valueOf(builder.charAt(index * SIZE_OF_ONE_DIGIT + startNewLine + j)));
+                //System.out.println(index * SIZE_OF_ONE_DIGIT + startNewLine + j);
             }
-            localInt = localInt + LINE_LENGTH;
+            startNewLine = startNewLine + LINE_LENGTH;
         }
         return arrEntryDigit;
     }
 
 
-    public ArrayList<Integer> getCodeFromLine(StringBuilder sb){
+    public ArrayList<Integer> getCodeFromLine(StringBuilder sb, int startNewLine) {
         ArrayList<Integer> arrInt = new ArrayList<Integer>();
 
         for (int i = 0; i < NB_OF_DIGIT_PER_LINE; i++) {
-            arrInt.add(DigitMap.digitToInteger(this.getEntryDigit(sb,i)) );
+            arrInt.add(DigitMap.digitToInteger(this.getEntryDigit(sb, i, startNewLine)));
         }
 
+        return arrInt;
+    }
+
+    public ArrayList<ArrayList<Integer>> getAllEntries(StringBuilder sb) {
+        ArrayList<ArrayList<Integer>> arrInt = new ArrayList<ArrayList<Integer>>();
+        int nbEntries = Math.round(sb.length() / NB_OF_CHAR_PER_ENTRY);
+
+        for (int i = 0; i < nbEntries; i++) {
+            arrInt.add(this.getCodeFromLine(sb, (int) (i* NB_OF_CHAR_PER_ENTRY)));
+        }
+
+        //System.out.println(arrInt);
         return arrInt;
     }
 }

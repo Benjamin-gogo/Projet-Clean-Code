@@ -21,7 +21,6 @@ public class DigitMap {
 
    static public int digitToInteger(ArrayList<String> parArray){
         for (Map.Entry pantry : _digitMap.entrySet()) {
-            System.out.println(pantry.getValue());
 
             if(pantry.getValue().equals(parArray)){
                 return pantry.getKey().hashCode();

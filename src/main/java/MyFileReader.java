@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+
 public class MyFileReader {
 
     public StringBuilder readMyFile(String fileName){
@@ -12,7 +13,6 @@ public class MyFileReader {
             // read line by line
             String line;
             while ((line = br.readLine()) != null) {
-                System.out.println(line.length());
                 sb.append(line).append("\n");
             }
 
@@ -20,7 +20,7 @@ public class MyFileReader {
             System.err.format("IOException: %s%n", e);
         }
 
-        System.out.println(sb);
+       // System.out.println(sb);
         return sb;
     }
 }
