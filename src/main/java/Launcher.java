@@ -1,9 +1,10 @@
+package main.java;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.*;
-import org.apache.commons.collections4.BidiMap;
-import org.apache.commons.collections4.bidimap.TreeBidiMap;
+
 
 public class Launcher {
     public static void main(String[] args) throws IOException {
@@ -12,7 +13,7 @@ public class Launcher {
 
         SegmentEntryDigit sed = new SegmentEntryDigit();
         //System.out.println(sed.getCodeFromLine(builder,0));
-        //sed.getAllEntries(builder);
+        sed.getAllEntries(builder);
 
     }
 }
