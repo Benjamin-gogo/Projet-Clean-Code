@@ -20,11 +20,11 @@ public class SegmentEntryDigit {
     }
 
 
-    public ArrayList<Integer> getCodeFromLine(StringBuilder sb, int startNewLine) {
+    public ArrayList<Integer> getCodeFromLine(StringBuilder sb, int indexOfEntry) {
         ArrayList<Integer> arrInt = new ArrayList<Integer>();
 
         for (int i = 0; i < NB_OF_DIGIT_PER_LINE; i++) {
-            arrInt.add(DigitMap.digitToInteger(this.getEntryDigit(sb, i, startNewLine)));
+            arrInt.add(DigitMap.digitToInteger(this.getEntryDigit(sb, i, (int) (indexOfEntry*NB_OF_CHAR_PER_ENTRY) )));
         }
 
         return arrInt;
@@ -35,10 +35,10 @@ public class SegmentEntryDigit {
         int nbEntries = Math.round(sb.length() / NB_OF_CHAR_PER_ENTRY);
 
         for (int i = 0; i < nbEntries; i++) {
-            arrInt.add(this.getCodeFromLine(sb, (int) (i* NB_OF_CHAR_PER_ENTRY)));
+            arrInt.add(this.getCodeFromLine(sb, i));
         }
 
-        //System.out.println(arrInt);
+        System.out.println(arrInt);
         return arrInt;
     }
 }

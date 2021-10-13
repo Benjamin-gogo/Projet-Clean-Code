@@ -11,7 +11,8 @@ public class Launcher {
         StringBuilder builder = myFileReader.readMyFile("texte.txt");
 
         SegmentEntryDigit sed = new SegmentEntryDigit();
-        sed.getAllEntries(builder);
+        //System.out.println(sed.getCodeFromLine(builder,0));
+        //sed.getAllEntries(builder);
 
     }
 }
