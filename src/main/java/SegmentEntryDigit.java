@@ -40,7 +40,8 @@ public class SegmentEntryDigit {
             arrInt.add(this.getCodeFromLine(sb, i));
         }
 
-        System.out.println(arrInt);
+        //System.out.println(arrInt);
         return arrInt;
     }
+
 }
