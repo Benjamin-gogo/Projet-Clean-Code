@@ -11,14 +11,14 @@ public class ChecksumCalculator {
         }
 
         int sizeOfEntry = entry.size();
-        int res = 0;
+        int result = 0;
 
-        for (int n : entry){
-            res = res + (sizeOfEntry*n);
+        for (int valueOfEntryDigit : entry){
+            result = result + (sizeOfEntry*valueOfEntryDigit);
             sizeOfEntry--;
         }
 
-        return res%VAL_MODULO;
+        return result%VAL_MODULO;
     }
 
     public ProgramResult checksumOperationForAllEntries(ArrayList<ArrayList<Integer>> allEntries){

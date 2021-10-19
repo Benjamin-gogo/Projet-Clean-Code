@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Convertor {
 
-    public static String ArrayEntryToString(ArrayList<Integer> parArr){
+    public static String ArrayEntryToString(ArrayList<Integer> entry){
         String s = "";
-        for (int i: parArr){
+        for (int i: entry){
             if(i==-1){
                 s = s + "?";
             }
@@ -17,11 +17,11 @@ public class Convertor {
         return s;
     }
 
-    public static String ModuloIntegerToString(int valModulo){
-        if(valModulo==0){
+    public static String ChecksumValueToString(int checksumValue){
+        if(checksumValue==0){
             return " ";
         }
-        if(valModulo==-1){
+        if(checksumValue==-1){
             return "ILL";
         }
 

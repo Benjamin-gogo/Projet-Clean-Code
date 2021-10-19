@@ -22,8 +22,6 @@ public class MyFileManager {
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
-
-        // System.out.println(sb);
         return sb;
     }
 
@@ -34,7 +32,7 @@ public class MyFileManager {
 
             for (int i = 0; i < programResult.getArraySize(); i++) {
                 myEntry = Convertor.ArrayEntryToString(programResult.getArrayOfAllEntries().get(i));
-                myChecksum = Convertor.ModuloIntegerToString(programResult.getChecksumValues().get(i));
+                myChecksum = Convertor.ChecksumValueToString(programResult.getChecksumValues().get(i));
                 myWriter.write(myEntry + " " + myChecksum);
                 myWriter.write("\n");
             }

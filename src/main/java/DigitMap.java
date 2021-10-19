@@ -21,11 +21,11 @@ public class DigitMap {
         put(0, new ArrayList<String> (Arrays.asList(" ","_"," ","|"," ","|","|","_","|")));
     }};
 
-   static public int digitToInteger(ArrayList<String> parArray){
-        for (Map.Entry pantry : _digitMap.entrySet()) {
+   static public int digitToInteger(ArrayList<String> digitEntry){
+        for (Map.Entry elementOfMap : _digitMap.entrySet()) {
 
-            if(pantry.getValue().equals(parArray)){
-                return pantry.getKey().hashCode();
+            if(elementOfMap.getValue().equals(digitEntry)){
+                return elementOfMap.getKey().hashCode();
             }
         }
         return -1;
