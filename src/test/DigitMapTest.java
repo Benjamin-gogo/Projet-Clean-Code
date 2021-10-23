@@ -1,6 +1,6 @@
 package test;
 
-import main.java.DigitMap;
+import main.DigitMap;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package test;
 
-import main.java.Convertor;
+import main.Convertor;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

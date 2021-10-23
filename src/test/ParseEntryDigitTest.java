@@ -1,7 +1,6 @@
 package test;
 
-import main.java.MyFileManager;
-import main.java.ParseEntryDigit;
+import main.ParseEntryDigit;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

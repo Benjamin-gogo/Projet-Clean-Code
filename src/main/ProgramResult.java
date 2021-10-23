@@ -1,4 +1,4 @@
-package main.java;
+package main;
 
 import java.util.ArrayList;
 
@@ -25,5 +25,14 @@ public class ProgramResult {
 
     public int getArraySize() {
         return arraySize;
+    }
+
+    @Override
+    public String toString() {
+        return "ProgramResult{" +
+                "arrayOfAllEntries=" + arrayOfAllEntries +
+                ", checksumValues=" + checksumValues +
+                ", arraySize=" + arraySize +
+                '}';
     }
 }
